@@ -1,5 +1,8 @@
 <template>
     <div>
+        <el-container>
+            <el-header>用户价值</el-header>
+        </el-container>
         <ve-bar :data="chartData" :settings="chartSettings"></ve-bar>
         <ve-pie :data="pieData"></ve-pie>
     </div>
@@ -50,6 +53,24 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+    .el-tag {
+        height: 75px;
+        width: 100%;
+        font-size:16px;
+        text-align: center;
+    }
+    .tagValue{
+        font-size: 30px;
+    }
+    .el-header{
+        background-color: #fafafa;
+        color: #010101;
+        line-height: 60px;
+        font-size: 24px;
+    }
+    .dateValue{
+        font-size: 12px;
 
+    }
 </style>
