@@ -72,7 +72,7 @@
         created() {
             const _this = this
             //初始化表
-            axios.get('http://localhost:8181/behaviorConversion/findByDate/2017-11-25/2017-11-27').then(function (resp) {
+            axios.get('/behaviorConversion/findByDate/2017-11-25/2017-11-27').then(function (resp) {
                 _this.chartData.rows[0].value = resp.data[0].pvSum
                 _this.chartData.rows[1].value = resp.data[0].cartFavSum
                 _this.chartData.rows[2].value = resp.data[0].buySum
@@ -110,7 +110,7 @@
             search(theDate) {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/behaviorConversion/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
+                axios.get('/behaviorConversion/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
                     _this.chartData.rows[0].value = resp.data[0].pvSum
                     _this.chartData.rows[1].value = resp.data[0].cartFavSum
                     _this.chartData.rows[2].value = resp.data[0].buySum

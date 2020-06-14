@@ -82,7 +82,7 @@
 
             //初始化表
             console.log("init")
-            axios.get('http://localhost:8181/userRetained/findAll').then(function (resp) {
+            axios.get('/userRetained/findAll').then(function (resp) {
 
                 _this.tableData=resp.data
                 _this.tableData.forEach((item) => {

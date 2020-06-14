@@ -24,7 +24,7 @@
                 style="width: 100%">
             <el-table-column
                     prop="dateMonth"
-                    label="时段"
+                    label="日期"
             >
             </el-table-column>
             <el-table-column
@@ -132,7 +132,7 @@
             search(theDate) {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/flowTrendByDay/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
+                axios.get('/flowTrendByDay/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
                     console.log(resp.data)
                     _this.configData=resp.data
                 _this.tableData=resp.data
@@ -153,7 +153,7 @@
             },
       /*      page(currentPage){
                 const _this = this
-                axios.get('http://localhost:8181/flowTrendByDay/findByPage/'+(currentPage-1)+'/7').then(function(resp){
+                axios.get('/flowTrendByDay/findByPage/'+(currentPage-1)+'/7').then(function(resp){
                     console.log(resp)
                     _this.tableData = resp.data.content
                     _this.pageSize = resp.data.size
@@ -236,7 +236,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://localhost:8181/flowTrendByDay/findByDate/2017-11-25/2017-12-02').then(function (resp) {
+            axios.get('/flowTrendByDay/findByDate/2017-11-25/2017-12-02').then(function (resp) {
                 console.log(resp.data)
                 _this.tableData=resp.data
                 _this.configData = resp.data
@@ -256,7 +256,7 @@
             })
           /*      //初始化表
                 console.log("init")
-            axios.get('http://localhost:8181/flowTrendByDay/findByPage/0/7').then(function (resp) {
+            axios.get('/flowTrendByDay/findByPage/0/7').then(function (resp) {
                 _this.tableData=resp.data.content
                 _this.pageSize = resp.data.size
                 _this.total = resp.data.totalElements

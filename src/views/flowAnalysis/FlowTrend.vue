@@ -222,14 +222,14 @@
         },
         created() {
             const _this = this
-            axios.get('http://localhost:8181/flowTrendByDay/history').then(function (resp) {
+            axios.get('/flowTrendByDay/history').then(function (resp) {
                 const historyData = resp.data
                 _this.pv += historyData.pv
                 _this.uv += historyData.uv
                 _this.bounceRate = historyData.bounceRate
                 _this.avgPv = historyData.avgPv
             })
-            axios.get('http://localhost:8181/flowTrend/findYesterday').then(function (resp) {
+            axios.get('/flowTrend/findYesterday').then(function (resp) {
                 console.log(resp.data)
                 _this.configData = resp.data
                 _this.tableData = resp.data

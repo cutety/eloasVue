@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <el-container>
-      <el-header>关于我们 </el-header>
+      <el-header>关于我们</el-header>
     </el-container>
   </div>
 </template>

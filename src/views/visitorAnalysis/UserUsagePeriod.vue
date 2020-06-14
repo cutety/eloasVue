@@ -26,7 +26,7 @@
                 style="width: 100%">
             <el-table-column
                     prop="dateTime"
-                    label="日期"
+                    label="时段"
             >
             </el-table-column>
             <el-table-column
@@ -107,7 +107,7 @@
         methods: {
             page(currentPage){
                 const _this = this
-                axios.get('http://localhost:8181/newUser/findByPage/'+(currentPage-1)+'/7').then(function(resp){
+                axios.get('/newUser/findByPage/'+(currentPage-1)+'/7').then(function(resp){
                     console.log(resp)
                     _this.tableData = resp.data.content
                     _this.pageSize = resp.data.size
@@ -123,8 +123,9 @@
             search(theDate) {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/flowTrend/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
+                axios.get('/flowTrend/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
                     console.log(resp)
+                    _this.tableData=resp.data
                     _this.configData = resp.data
                     let dateTimeArr = []
                     let avgPvArr = []
@@ -211,7 +212,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://localhost:8181/flowTrend/findByDate/2017-11-25/2017-12-02').then(function (resp) {
+            axios.get('/flowTrend/findByDate/2017-11-25/2017-12-02').then(function (resp) {
                 console.log(resp)
                 _this.configData = resp.data
                 _this.tableData=resp.data

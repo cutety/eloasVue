@@ -37,7 +37,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://localhost:8181/userValue/get').then(function (resp) {
+            axios.get('/userValue/get').then(function (resp) {
                 console.log(resp.data)
                 _this.chartData.rows[0].value = resp.data.valueUsers
                 _this.chartData.rows[1].value = resp.data.developUsers

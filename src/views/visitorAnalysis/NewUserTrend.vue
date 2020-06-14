@@ -122,7 +122,7 @@
         methods: {
          /*   page(currentPage){
                 const _this = this
-                axios.get('http://localhost:8181/newUser/findByPage/'+(currentPage-1)+'/7').then(function(resp){
+                axios.get('/newUser/findByPage/'+(currentPage-1)+'/7').then(function(resp){
                     console.log(resp)
                     _this.tableData = resp.data.content
                     _this.pageSize = resp.data.size
@@ -138,7 +138,7 @@
             search(theDate) {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/newUser/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
+                axios.get('/newUser/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
                     console.log(resp)
                     _this.configData = resp.data
                     _this.tableData=resp.data
@@ -227,7 +227,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://localhost:8181/newUser/findByDate/' + '2017-11-25' + '/' + '2017-12-02').then(function (resp) {
+            axios.get('/newUser/findByDate/' + '2017-11-25' + '/' + '2017-12-02').then(function (resp) {
                 console.log(resp)
                 _this.configData = resp.data
                 _this.tableData=resp.data
@@ -245,7 +245,7 @@
             })
            /* //初始化表
             console.log("init")
-            axios.get('http://localhost:8181/newUser/findByPage/0/7').then(function (resp) {
+            axios.get('/newUser/findByPage/0/7').then(function (resp) {
                 _this.tableData=resp.data.content
                 _this.pageSize = resp.data.size
                 _this.total = resp.data.totalElements

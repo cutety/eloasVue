@@ -93,7 +93,7 @@
         created() {
             console.log("initializing")
             const _this = this
-            axios.get('http://localhost:8181/commodity/buy/2017-12-03').then(function (resp) {
+            axios.get('/commodity/buy/2017-12-03').then(function (resp) {
                 console.log(resp.data)
                 _this.buy.rows = resp.data
                 _this.tableData=resp.data
@@ -104,7 +104,7 @@
             handleClick(tab, event) {
                 this.activeName=tab.name
                 const _this = this
-                axios.get('http://localhost:8181/commodity/'+tab.name+'/'+this.value1).then(function (resp) {
+                axios.get('/commodity/'+tab.name+'/'+this.value1).then(function (resp) {
                     console.log(resp.data)
                     _this.tableData=resp.data
                     if(tab.name==='cart'){
@@ -122,7 +122,7 @@
             search(theDate) {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/commodity/'+this.activeName+'/'+theDate).then(function (resp) {
+                axios.get('/commodity/'+this.activeName+'/'+theDate).then(function (resp) {
                     _this.buy.rows = resp.data
                     _this.tableData=resp.data
                 })

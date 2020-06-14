@@ -117,7 +117,7 @@
 
         created() {
             const _this = this
-            axios.get('http://localhost:8181/userAct/findYesterday').then(function (resp) {
+            axios.get('/userAct/findYesterday').then(function (resp) {
                 console.log(resp.data)
                 const yesterdayData = resp.data
                 _this.dau = yesterdayData.dau
@@ -128,7 +128,7 @@
             })
 /*            //初始化表
             console.log("init")
-            axios.get('http://localhost:8181/userAct/findByPage/0/7').then(function (resp) {
+            axios.get('/userAct/findByPage/0/7').then(function (resp) {
                 const dauDivMauArr=[]
                 console.log(resp.data.content)
                 _this.tableData=resp.data.content
@@ -138,7 +138,7 @@
                     item['dauDivMau']=item.dau/item.mau
                 })
             })*/
-            axios.get('http://localhost:8181/userAct/findByDate/2017-11-25/2017-12-02').then(function (resp) {
+            axios.get('/userAct/findByDate/2017-11-25/2017-12-02').then(function (resp) {
                 console.log(resp.data)
                 _this.chartData.rows = resp.data
                 _this.tableData=resp.data
@@ -148,7 +148,7 @@
         methods: {
      /*       page(currentPage){
                 const _this = this
-                axios.get('http://localhost:8181/userAct/findByPage/'+(currentPage-1)+'/7').then(function(resp){
+                axios.get('/userAct/findByPage/'+(currentPage-1)+'/7').then(function(resp){
                     _this.tableData = resp.data.content
                     _this.pageSize = resp.data.size
                     _this.total = resp.data.totalElements
@@ -162,7 +162,7 @@
             {
                 console.log(theDate)
                 const _this = this
-                axios.get('http://localhost:8181/userAct/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
+                axios.get('/userAct/findByDate/' + theDate[0] + '/' + theDate[1]).then(function (resp) {
                     console.log(resp.data)
                     _this.chartData.rows = resp.data
                     _this.tableData=resp.data
