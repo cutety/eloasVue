@@ -25,7 +25,7 @@ const routes = [
         name: "首页",
         component: Welcome,
         meta: {
-            title: 'eloas'
+            title: 'eloas电商日志离线分析系统'
         },
         show: false,
     },
@@ -187,7 +187,7 @@ const routes = [
                 name: "欢迎",
                 component: Welcome,
                 meta: {
-                    title: 'eloas'
+                    title: 'eloas电商日志离线分析系统'
                 },
             }
         ]
